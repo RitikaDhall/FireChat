@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D44E7AB254C83D700799908 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D44E7AA254C83D700799908 /* Extensions.swift */; };
 		4D6B465B254BF29D000D890C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B465A254BF29D000D890C /* AppDelegate.swift */; };
 		4D6B465D254BF29D000D890C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B465C254BF29D000D890C /* SceneDelegate.swift */; };
 		4D6B465F254BF29D000D890C /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B465E254BF29D000D890C /* ConversationsViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D44E7AA254C83D700799908 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4D6B4657254BF29D000D890C /* FireChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D6B465A254BF29D000D890C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D6B465C254BF29D000D890C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D44E7A8254C706400799908 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4D6B4677254BF5BE000D890C /* LoginViewController.swift */,
+				4D6B467B254BF5CD000D890C /* RegisterViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		4D6B464E254BF29D000D890C = {
 			isa = PBXGroup;
 			children = (
@@ -82,8 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				4D6B465E254BF29D000D890C /* ConversationsViewController.swift */,
-				4D6B4677254BF5BE000D890C /* LoginViewController.swift */,
-				4D6B467B254BF5CD000D890C /* RegisterViewController.swift */,
+				4D44E7A8254C706400799908 /* Login */,
 				4D6B467E254BF5E6000D890C /* PhotoViewerViewController.swift */,
 				4D6B4681254BF5F6000D890C /* VideoPlayerViewController.swift */,
 				4D6B4684254BF620000D890C /* NewConversationViewController.swift */,
@@ -120,6 +130,7 @@
 			children = (
 				4D6B465A254BF29D000D890C /* AppDelegate.swift */,
 				4D6B465C254BF29D000D890C /* SceneDelegate.swift */,
+				4D44E7AA254C83D700799908 /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -208,6 +219,7 @@
 				4D6B4685254BF620000D890C /* NewConversationViewController.swift in Sources */,
 				4D6B465F254BF29D000D890C /* ConversationsViewController.swift in Sources */,
 				4D6B4682254BF5F6000D890C /* VideoPlayerViewController.swift in Sources */,
+				4D44E7AB254C83D700799908 /* Extensions.swift in Sources */,
 				4D6B465B254BF29D000D890C /* AppDelegate.swift in Sources */,
 				4D6B4688254BF62E000D890C /* ProfileViewController.swift in Sources */,
 				4D6B465D254BF29D000D890C /* SceneDelegate.swift in Sources */,
@@ -361,6 +373,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GL54C2234Q;
 				INFOPLIST_FILE = FireChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,6 +393,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GL54C2234Q;
 				INFOPLIST_FILE = FireChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
