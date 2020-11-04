@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
     
@@ -75,8 +76,26 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    private let googleLoginButton: GIDSignInButton = {
+        let button = GIDSignInButton()
+//        button.layer.cornerRadius = 12
+//        button.layer.masksToBounds = true
+        button.style = .wide
+        return button
+    }()
+    
+    private var loginObserver: NSObjectProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loginObserver = NotificationCenter.default.addObserver(forName: .didLogInNotification, object: nil, queue: .main, using: { [weak self] _ in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.navigationController?.dismiss(animated: true, completion: nil)
+        })
+        
         title = "Log In"
         view.backgroundColor = .white
         
@@ -86,6 +105,8 @@ class LoginViewController: UIViewController {
                                                             action: #selector(didTapRegister))
         
         loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
+        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
         
         emailField.delegate = self
         passwordField.delegate = self
@@ -99,6 +120,13 @@ class LoginViewController: UIViewController {
         scrollView.addSubview(passwordField)
         scrollView.addSubview(loginButton)
         scrollView.addSubview(fbLoginButton)
+        scrollView.addSubview(googleLoginButton)
+    }
+    
+    deinit {
+        if let observer = loginObserver {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -109,22 +137,31 @@ class LoginViewController: UIViewController {
                                  y: 50,
                                  width: size,
                                  height: size)
+        
         emailField.frame = CGRect(x: 30,
                                   y: imageView.bottom + 30,
                                   width: scrollView.width - 60,
                                   height: 52)
+        
         passwordField.frame = CGRect(x: 30,
                                   y: emailField.bottom + 10,
                                   width: scrollView.width - 60,
                                   height: 52)
+        
         loginButton.frame = CGRect(x: 30,
                                    y: passwordField.bottom + 30,
                                    width: scrollView.width - 60,
                                    height: 52)
+        
         fbLoginButton.frame = CGRect(x: 30,
                                      y: loginButton.bottom + 10,
                                      width: scrollView.width - 60,
                                      height: 52)
+        
+        googleLoginButton.frame = CGRect(x: 30,
+                                         y: fbLoginButton.bottom + 10,
+                                         width: scrollView.width - 60,
+                                         height: 52)
     }
     
     @objc private func didTapLogin() {
