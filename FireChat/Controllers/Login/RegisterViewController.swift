@@ -112,7 +112,7 @@ class RegisterViewController: UIViewController {
 //                                                            target: self,
 //                                                            action: #selector(didTapRegister))
         
-        registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
+        registerButton.addTarget(self, action: #selector(didTapRegister), for: .touchUpInside)
         
         firstNameField.delegate = self
         lastNameField.delegate = self
@@ -173,7 +173,7 @@ class RegisterViewController: UIViewController {
                                    height: 52)
     }
     
-    @objc private func registerButtonTapped() {
+    @objc private func didTapRegister() {
         
         firstNameField.resignFirstResponder()
         lastNameField.resignFirstResponder()
@@ -214,9 +214,28 @@ class RegisterViewController: UIViewController {
                     return
                 }
                 
-                DatabaseManager.shared.insertUser(with: ChatAppUser(firstName: firstName,
-                                                                    lastName: lastName,
-                                                                    emailAddress: email))
+                let chatUser = ChatAppUser(firstName: firstName,
+                                           lastName: lastName,
+                                           emailAddress: email)
+                DatabaseManager.shared.insertUser(with: chatUser, completion: { success in
+                    if success {
+                        // upload image
+                        guard let image = strongSelf.imageView.image,
+                              let data = image.pngData() else {
+                            return
+                        }
+                        let fileName = chatUser.profilePictureFileName
+                        StorageManager.shared.uploadProfilePicture(with: data, fileName: fileName, completion: { result in
+                            switch result {
+                            case .success(let downloadURL):
+                                UserDefaults.standard.set(downloadURL, forKey: "profile_picture_url")
+                                print(downloadURL)
+                            case .failure(let error):
+                                print("Storage manager error: \(error)")
+                            }
+                        })
+                    }
+                })
                 
                 strongSelf.navigationController?.dismiss(animated: true, completion: nil)
             })
@@ -249,7 +268,7 @@ extension RegisterViewController: UITextFieldDelegate {
             passwordField.becomeFirstResponder()
         }
         else if textField == passwordField {
-            registerButtonTapped()
+            didTapRegister()
         }
         
         return true
