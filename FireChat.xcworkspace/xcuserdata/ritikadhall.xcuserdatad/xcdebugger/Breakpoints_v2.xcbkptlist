@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "3CEB718C-C661-4B47-8E43-ED09FE9D01A9"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C7D5209A-4ACE-450E-8197-9F577103F7F7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FireChat/Resources/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "C7D5209A-4ACE-450E-8197-9F577103F7F7 - ac5542bdf1d47238"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FireChat.AppDelegate.__deallocating_deinit"
+                  moduleName = "FireChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ritikadhall/Documents/Swift/FireChat/FireChat/Resources/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "C7D5209A-4ACE-450E-8197-9F577103F7F7 - cbbfd4c5e6143903"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FireChat.AppDelegate.__allocating_init() -&gt; FireChat.AppDelegate"
+                  moduleName = "FireChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ritikadhall/Documents/Swift/FireChat/FireChat/Resources/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "C7D5209A-4ACE-450E-8197-9F577103F7F7 - 4add4aef9aa4ebb2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FireChat.AppDelegate.init() -&gt; FireChat.AppDelegate"
+                  moduleName = "FireChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ritikadhall/Documents/Swift/FireChat/FireChat/Resources/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "93">
+               </Location>
+               <Location
+                  uuid = "C7D5209A-4ACE-450E-8197-9F577103F7F7 - 82030638564c297a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "main"
+                  moduleName = "FireChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ritikadhall/Documents/Swift/FireChat/FireChat/Resources/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

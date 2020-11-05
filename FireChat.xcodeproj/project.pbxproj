@@ -23,6 +23,7 @@
 		4D6B4685254BF620000D890C /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B4684254BF620000D890C /* NewConversationViewController.swift */; };
 		4D6B4688254BF62E000D890C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B4687254BF62E000D890C /* ProfileViewController.swift */; };
 		4DEACD5C25512F6E00F0CB6A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DEACD5B25512F6E00F0CB6A /* Colors.xcassets */; };
+		4DFC70782552CCDF000C5AC1 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC70772552CCDF000C5AC1 /* ChatViewController.swift */; };
 		8FC8934C9E471392280B7127 /* Pods_FireChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00634EE804C5656D545A45F6 /* Pods_FireChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		4D6B4684254BF620000D890C /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		4D6B4687254BF62E000D890C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4DEACD5B25512F6E00F0CB6A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		4DFC70772552CCDF000C5AC1 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		951B05398125FA14725B3E00 /* Pods-FireChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireChat.release.xcconfig"; path = "Target Support Files/Pods-FireChat/Pods-FireChat.release.xcconfig"; sourceTree = "<group>"; };
 		EF9F17A8B9E9ED5323CCF045 /* Pods-FireChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireChat.debug.xcconfig"; path = "Target Support Files/Pods-FireChat/Pods-FireChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +131,7 @@
 				4D6B4681254BF5F6000D890C /* VideoPlayerViewController.swift */,
 				4D6B4684254BF620000D890C /* NewConversationViewController.swift */,
 				4D6B4687254BF62E000D890C /* ProfileViewController.swift */,
+				4DFC70772552CCDF000C5AC1 /* ChatViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				4D6B465B254BF29D000D890C /* AppDelegate.swift in Sources */,
 				4D6B4688254BF62E000D890C /* ProfileViewController.swift in Sources */,
 				4D6B465D254BF29D000D890C /* SceneDelegate.swift in Sources */,
+				4DFC70782552CCDF000C5AC1 /* ChatViewController.swift in Sources */,
 				4D6B467F254BF5E6000D890C /* PhotoViewerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
