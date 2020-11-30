@@ -21,7 +21,6 @@
 #if !TARGET_OS_TV
 
  #import "FBSDKCoreKit+Internal.h"
- #import "FBSDKProfile.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -42,6 +41,8 @@ typedef void (^FBSDKParseProfileBlock)(id result, FBSDKProfile *_Nonnull *_Nulla
                   parseBlock:(FBSDKParseProfileBlock)parseBlock;
 
 + (void)loadProfileWithToken:(FBSDKAccessToken *)token completion:(_Nullable FBSDKProfileBlock)completion;
+
++ (void)observeChangeAccessTokenChange:(NSNotification *)notification;
 
 @end
 

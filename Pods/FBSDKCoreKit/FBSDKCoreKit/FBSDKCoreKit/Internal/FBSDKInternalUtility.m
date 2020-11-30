@@ -69,7 +69,7 @@ static BOOL ShouldOverrideHostWithGamingDomain(NSString *hostPrefix)
                        error:errorRef];
 }
 
-+ (NSDictionary *)dictionaryFromFBURL:(NSURL *)url
++ (NSDictionary *)parametersFromFBURL:(NSURL *)url
 {
   // version 3.2.3 of the Facebook app encodes the parameters in the query but
   // version 3.3 and above encode the parameters in the fragment;
@@ -109,11 +109,15 @@ static BOOL ShouldOverrideHostWithGamingDomain(NSString *hostPrefix)
                    declinedPermissions:(NSMutableSet *)declinedPermissions
                     expiredPermissions:(NSMutableSet *)expiredPermissions
 {
-  NSArray *resultData = responseObject[@"data"];
+  NSArray *resultData = [FBSDKTypeUtility dictionary:responseObject objectForKey:@"data" ofType:NSArray.class];
   if (resultData.count > 0) {
     for (NSDictionary *permissionsDictionary in resultData) {
-      NSString *permissionName = permissionsDictionary[@"permission"];
-      NSString *status = permissionsDictionary[@"status"];
+      NSString *permissionName = [FBSDKTypeUtility dictionary:permissionsDictionary objectForKey:@"permission" ofType:NSString.class];
+      NSString *status = [FBSDKTypeUtility dictionary:permissionsDictionary objectForKey:@"status" ofType:NSString.class];
+
+      if (!permissionName || !status) {
+        continue;
+      }
 
       if ([status isEqualToString:@"granted"]) {
         [grantedPermissions addObject:permissionName];
@@ -417,8 +421,20 @@ static NSMapTable *_transientObjects;
 
 + (BOOL)_canOpenURLScheme:(NSString *)scheme
 {
+  scheme = [FBSDKTypeUtility stringValue:scheme];
+  if (!scheme) {
+    return NO;
+  }
+
   NSURLComponents *components = [[NSURLComponents alloc] init];
-  components.scheme = scheme;
+  @try {
+    components.scheme = scheme;
+  } @catch (NSException *exception) {
+    [FBSDKLogger singleShotLogEntry:FBSDKLoggingBehaviorDeveloperErrors
+                       formatString:@"Invalid URL scheme provided: %@", scheme];
+    return NO;
+  }
+
   components.path = @"/";
   return [[UIApplication sharedApplication] canOpenURL:components.URL];
 }
