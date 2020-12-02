@@ -70,6 +70,16 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    private let orLabel: UILabel = {
+        let label = UILabel()
+        label.text = "- OR -"
+        label.font = .systemFont(ofSize: 20, weight: .medium)
+        label.textColor = .systemGray2
+        label.textAlignment = .center
+        label.numberOfLines = 1
+        return label
+    }()
+    
     private let fbLoginButton: FBLoginButton = {
         let button = FBLoginButton()
         button.permissions = ["email,public_profile"]
@@ -81,8 +91,6 @@ class LoginViewController: UIViewController {
     
     private let googleLoginButton: GIDSignInButton = {
         let button = GIDSignInButton()
-//        button.layer.cornerRadius = 12
-//        button.layer.masksToBounds = true
         button.style = .wide
         return button
     }()
@@ -122,6 +130,7 @@ class LoginViewController: UIViewController {
         scrollView.addSubview(emailField)
         scrollView.addSubview(passwordField)
         scrollView.addSubview(loginButton)
+        scrollView.addSubview(orLabel)
         scrollView.addSubview(fbLoginButton)
         scrollView.addSubview(googleLoginButton)
     }
@@ -156,8 +165,13 @@ class LoginViewController: UIViewController {
                                    width: scrollView.width - 60,
                                    height: 52)
         
+        orLabel.frame = CGRect(x: 30,
+                               y: loginButton.bottom + 15,
+                               width: scrollView.width - 60,
+                               height: 52)
+        
         fbLoginButton.frame = CGRect(x: 30,
-                                     y: loginButton.bottom + 30,
+                                     y: orLabel.bottom + 15,
                                      width: scrollView.width - 60,
                                      height: 52)
         
