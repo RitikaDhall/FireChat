@@ -25,6 +25,7 @@
 		4DB6453F2553DE09000F0AED /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB6453E2553DE09000F0AED /* StorageManager.swift */; };
 		4DE86F162577D2BE00C35968 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE86F152577D2BE00C35968 /* ConversationTableViewCell.swift */; };
 		4DEACD5C25512F6E00F0CB6A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DEACD5B25512F6E00F0CB6A /* Colors.xcassets */; };
+		4DF2D5DD258097DB00E31E9F /* NewConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2D5DC258097DB00E31E9F /* NewConversationCell.swift */; };
 		4DFC70782552CCDF000C5AC1 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC70772552CCDF000C5AC1 /* ChatViewController.swift */; };
 		8FC8934C9E471392280B7127 /* Pods_FireChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00634EE804C5656D545A45F6 /* Pods_FireChat.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		4DB6453E2553DE09000F0AED /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		4DE86F152577D2BE00C35968 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		4DEACD5B25512F6E00F0CB6A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		4DF2D5DC258097DB00E31E9F /* NewConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationCell.swift; sourceTree = "<group>"; };
 		4DFC70772552CCDF000C5AC1 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		951B05398125FA14725B3E00 /* Pods-FireChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireChat.release.xcconfig"; path = "Target Support Files/Pods-FireChat/Pods-FireChat.release.xcconfig"; sourceTree = "<group>"; };
 		EF9F17A8B9E9ED5323CCF045 /* Pods-FireChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireChat.debug.xcconfig"; path = "Target Support Files/Pods-FireChat/Pods-FireChat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				4D6B4663254BF29D000D890C /* Assets.xcassets */,
 				4DEACD5B25512F6E00F0CB6A /* Colors.xcassets */,
 				4DE86F152577D2BE00C35968 /* ConversationTableViewCell.swift */,
+				4DF2D5DC258097DB00E31E9F /* NewConversationCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D6B4678254BF5BE000D890C /* LoginViewController.swift in Sources */,
+				4DF2D5DD258097DB00E31E9F /* NewConversationCell.swift in Sources */,
 				4D32B4D52550100500FD8698 /* DatabaseManager.swift in Sources */,
 				4D6B467C254BF5CD000D890C /* RegisterViewController.swift in Sources */,
 				4D6B4685254BF620000D890C /* NewConversationViewController.swift in Sources */,

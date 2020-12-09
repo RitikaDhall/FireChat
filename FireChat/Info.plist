@@ -60,7 +60,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Allow FireChat to access camera.</string>
+	<string>FireChat would like to access camera.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>FireChat would like to access microphone.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>FireChat would like to access photo library.</string>
 	<key>UIApplicationSceneManifest</key>

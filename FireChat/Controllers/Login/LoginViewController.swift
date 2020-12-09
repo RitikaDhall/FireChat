@@ -145,6 +145,7 @@ class LoginViewController: UIViewController {
         super.viewDidLayoutSubviews()
         scrollView.frame = view.bounds
         let size = scrollView.width / 1.5
+        
         imageView.frame = CGRect(x: (scrollView.width-size)/2,
                                  y: 50,
                                  width: size,
