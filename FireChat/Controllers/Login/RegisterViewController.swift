@@ -26,7 +26,7 @@ class RegisterViewController: UIViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
         imageView.layer.borderWidth = 2
-        imageView.layer.borderColor = UIColor.systemGray2.cgColor
+        imageView.layer.borderColor = UIColor.systemGray5.cgColor
         return imageView
     }()
     
@@ -37,11 +37,11 @@ class RegisterViewController: UIViewController {
         field.returnKeyType = .continue
         field.layer.cornerRadius = 12
         field.layer.borderWidth = 1
-        field.layer.borderColor = UIColor.systemGray2.cgColor
+        field.layer.borderColor = UIColor.systemGray5.cgColor
         field.placeholder = "First name"
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         field.leftViewMode = .always
-        field.backgroundColor = .white
+        field.backgroundColor = .secondarySystemBackground
         return field
     }()
     
@@ -52,11 +52,11 @@ class RegisterViewController: UIViewController {
         field.returnKeyType = .continue
         field.layer.cornerRadius = 12
         field.layer.borderWidth = 1
-        field.layer.borderColor = UIColor.systemGray2.cgColor
+        field.layer.borderColor = UIColor.systemGray5.cgColor
         field.placeholder = "Last name"
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         field.leftViewMode = .always
-        field.backgroundColor = .white
+        field.backgroundColor = .secondarySystemBackground
         return field
     }()
     
@@ -67,11 +67,11 @@ class RegisterViewController: UIViewController {
         field.returnKeyType = .continue
         field.layer.cornerRadius = 12
         field.layer.borderWidth = 1
-        field.layer.borderColor = UIColor.systemGray2.cgColor
+        field.layer.borderColor = UIColor.systemGray5.cgColor
         field.placeholder = "Email address"
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         field.leftViewMode = .always
-        field.backgroundColor = .white
+        field.backgroundColor = .secondarySystemBackground
         return field
     }()
     
@@ -82,12 +82,12 @@ class RegisterViewController: UIViewController {
         field.returnKeyType = .done
         field.layer.cornerRadius = 12
         field.layer.borderWidth = 1
-        field.layer.borderColor = UIColor.systemGray2.cgColor
+        field.layer.borderColor = UIColor.systemGray5.cgColor
         field.placeholder = "Password"
         field.isSecureTextEntry = true
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         field.leftViewMode = .always
-        field.backgroundColor = .white
+        field.backgroundColor = .secondarySystemBackground
         return field
     }()
     
@@ -105,7 +105,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Log In"
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register",
 //                                                            style: .done,

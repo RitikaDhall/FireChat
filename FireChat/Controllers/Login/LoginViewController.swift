@@ -35,11 +35,11 @@ class LoginViewController: UIViewController {
         field.returnKeyType = .continue
         field.layer.cornerRadius = 12
         field.layer.borderWidth = 1
-        field.layer.borderColor = UIColor.systemGray2.cgColor
+        field.layer.borderColor = UIColor.systemGray5.cgColor
         field.placeholder = "Email address"
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         field.leftViewMode = .always
-        field.backgroundColor = .white
+        field.backgroundColor = .secondarySystemBackground
         return field
     }()
     
@@ -50,12 +50,12 @@ class LoginViewController: UIViewController {
         field.returnKeyType = .done
         field.layer.cornerRadius = 12
         field.layer.borderWidth = 1
-        field.layer.borderColor = UIColor.systemGray2.cgColor
+        field.layer.borderColor = UIColor.systemGray5.cgColor
         field.placeholder = "Password"
         field.isSecureTextEntry = true
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         field.leftViewMode = .always
-        field.backgroundColor = .white
+        field.backgroundColor = .secondarySystemBackground
         return field
     }()
 
@@ -73,8 +73,8 @@ class LoginViewController: UIViewController {
     private let orLabel: UILabel = {
         let label = UILabel()
         label.text = "- OR -"
-        label.font = .systemFont(ofSize: 20, weight: .medium)
-        label.textColor = .systemGray2
+        label.font = .systemFont(ofSize: 20, weight: .heavy)
+        label.textColor = UIColor(named: "Gray")
         label.textAlignment = .center
         label.numberOfLines = 1
         return label
@@ -108,7 +108,7 @@ class LoginViewController: UIViewController {
         })
         
         title = "Log In"
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register",
                                                             style: .done,
