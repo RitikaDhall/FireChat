@@ -369,7 +369,6 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
         }
         else {
             // append to existing convo data
-            
             guard let conversationId = conversationId,
                   let name = self.title else {
                 return

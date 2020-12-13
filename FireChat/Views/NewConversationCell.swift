@@ -22,7 +22,7 @@ class NewConversationCell: UITableViewCell {
     
     private let userNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 21, weight: .semibold)
+        label.font = .systemFont(ofSize: 21, weight: .regular)
         return label
     }()
     
