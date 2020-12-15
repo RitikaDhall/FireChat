@@ -271,7 +271,7 @@ extension LoginViewController: LoginButtonDelegate {
     
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
         guard let token = result?.token?.tokenString else {
-            print("User falied to log in with Facebook.")
+            print("User failed to log in with Facebook.")
             return
         }
         
