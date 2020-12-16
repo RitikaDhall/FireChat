@@ -33,7 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mpT-6V-PiU">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="bwS-dF-tMS" customClass="Pro">
                                 <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -41,15 +41,15 @@
                         <viewLayoutGuide key="safeArea" id="1Nk-gR-15s"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mpT-6V-PiU" firstAttribute="leading" secondItem="1Nk-gR-15s" secondAttribute="leading" id="73s-Sj-Bnr"/>
-                            <constraint firstItem="1Nk-gR-15s" firstAttribute="trailing" secondItem="mpT-6V-PiU" secondAttribute="trailing" id="BjJ-QD-qAW"/>
-                            <constraint firstItem="1Nk-gR-15s" firstAttribute="bottom" secondItem="mpT-6V-PiU" secondAttribute="bottom" id="CbL-B1-6Bf"/>
-                            <constraint firstItem="mpT-6V-PiU" firstAttribute="top" secondItem="1Nk-gR-15s" secondAttribute="top" id="kOV-xo-Ify"/>
+                            <constraint firstItem="bwS-dF-tMS" firstAttribute="top" secondItem="1Nk-gR-15s" secondAttribute="top" id="FBF-Of-O21"/>
+                            <constraint firstItem="bwS-dF-tMS" firstAttribute="leading" secondItem="1Nk-gR-15s" secondAttribute="leading" id="fVY-RZ-go5"/>
+                            <constraint firstItem="1Nk-gR-15s" firstAttribute="trailing" secondItem="bwS-dF-tMS" secondAttribute="trailing" id="ggS-if-Cer"/>
+                            <constraint firstItem="1Nk-gR-15s" firstAttribute="bottom" secondItem="bwS-dF-tMS" secondAttribute="bottom" id="xSo-yb-OsX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="dJk-zU-OUl"/>
                     <connections>
-                        <outlet property="tableView" destination="mpT-6V-PiU" id="pWz-bm-17s"/>
+                        <outlet property="tableView" destination="bwS-dF-tMS" id="GnP-ol-Vgs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wew-rR-7Fd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
