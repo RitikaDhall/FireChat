@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4D13D4502589E3E800146726 /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13D44F2589E3E800146726 /* LocationPickerViewController.swift */; };
-		4D2464B8254F23F600B70205 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D2464B7254F23F600B70205 /* GoogleService-Info.plist */; };
 		4D32B4D52550100500FD8698 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32B4D42550100500FD8698 /* DatabaseManager.swift */; };
 		4D44E7AB254C83D700799908 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D44E7AA254C83D700799908 /* Extensions.swift */; };
 		4D6B465B254BF29D000D890C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B465A254BF29D000D890C /* AppDelegate.swift */; };
@@ -24,6 +23,7 @@
 		4D6B4685254BF620000D890C /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B4684254BF620000D890C /* NewConversationViewController.swift */; };
 		4D6B4688254BF62E000D890C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B4687254BF62E000D890C /* ProfileViewController.swift */; };
 		4DB6453F2553DE09000F0AED /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB6453E2553DE09000F0AED /* StorageManager.swift */; };
+		4DBAE8EA258B32C000563B38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DBAE8E9258B32C000563B38 /* GoogleService-Info.plist */; };
 		4DE86F162577D2BE00C35968 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE86F152577D2BE00C35968 /* ConversationTableViewCell.swift */; };
 		4DEACD5C25512F6E00F0CB6A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DEACD5B25512F6E00F0CB6A /* Colors.xcassets */; };
 		4DF2D5DD258097DB00E31E9F /* NewConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2D5DC258097DB00E31E9F /* NewConversationCell.swift */; };
@@ -34,7 +34,6 @@
 /* Begin PBXFileReference section */
 		00634EE804C5656D545A45F6 /* Pods_FireChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D13D44F2589E3E800146726 /* LocationPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
-		4D2464B7254F23F600B70205 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4D32B4D42550100500FD8698 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		4D44E7AA254C83D700799908 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4D6B4657254BF29D000D890C /* FireChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +51,7 @@
 		4D6B4684254BF620000D890C /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		4D6B4687254BF62E000D890C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4DB6453E2553DE09000F0AED /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		4DBAE8E9258B32C000563B38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4DE86F152577D2BE00C35968 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		4DEACD5B25512F6E00F0CB6A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		4DF2D5DC258097DB00E31E9F /* NewConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationCell.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 				4D6B4670254BF424000D890C /* Views */,
 				4D6B466F254BF417000D890C /* Controllers */,
 				4D6B4668254BF29D000D890C /* Info.plist */,
-				4D2464B7254F23F600B70205 /* GoogleService-Info.plist */,
+				4DBAE8E9258B32C000563B38 /* GoogleService-Info.plist */,
 			);
 			path = FireChat;
 			sourceTree = "<group>";
@@ -254,7 +254,7 @@
 			files = (
 				4DEACD5C25512F6E00F0CB6A /* Colors.xcassets in Resources */,
 				4D6B4667254BF29D000D890C /* LaunchScreen.storyboard in Resources */,
-				4D2464B8254F23F600B70205 /* GoogleService-Info.plist in Resources */,
+				4DBAE8EA258B32C000563B38 /* GoogleService-Info.plist in Resources */,
 				4D6B4664254BF29D000D890C /* Assets.xcassets in Resources */,
 				4D6B4662254BF29D000D890C /* Main.storyboard in Resources */,
 			);
@@ -402,7 +402,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -492,6 +492,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = GL54C2234Q;
 				INFOPLIST_FILE = FireChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
@@ -520,6 +521,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.FireChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

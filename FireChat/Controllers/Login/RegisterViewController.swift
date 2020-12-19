@@ -107,11 +107,6 @@ class RegisterViewController: UIViewController {
         title = "Log In"
         view.backgroundColor = .systemBackground
         
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register",
-//                                                            style: .done,
-//                                                            target: self,
-//                                                            action: #selector(didTapRegister))
-        
         registerButton.addTarget(self, action: #selector(didTapRegister), for: .touchUpInside)
         
         firstNameField.delegate = self
@@ -213,6 +208,9 @@ class RegisterViewController: UIViewController {
                     print("Error creating user.")
                     return
                 }
+                
+                UserDefaults.standard.set(email, forKey: "email")
+                UserDefaults.standard.set("\(firstName) \(lastName)", forKey: "name")
                 
                 let chatUser = ChatAppUser(firstName: firstName,
                                            lastName: lastName,

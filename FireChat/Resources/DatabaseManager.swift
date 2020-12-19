@@ -213,8 +213,6 @@ extension DatabaseManager {
                 break
             case .custom(_):
                 break
-            @unknown default:
-                break
             }
             
             let newConversationData: [String : Any] = [
@@ -319,8 +317,6 @@ extension DatabaseManager {
         case .linkPreview(_):
             break
         case .custom(_):
-            break
-        @unknown default:
             break
         }
         
@@ -524,8 +520,6 @@ extension DatabaseManager {
             case .linkPreview(_):
                 break
             case .custom(_):
-                break
-            @unknown default:
                 break
             }
             

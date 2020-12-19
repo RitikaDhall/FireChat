@@ -12,7 +12,7 @@ import GoogleSignIn
 import SDWebImage
 
 enum ProfileViewModelType {
-    case name, email, logout
+    case name, info, logout
 }
 
 struct ProfileViewModel {
@@ -42,7 +42,7 @@ class ProfileViewController: UIViewController {
             ProfileViewModel(viewModelType: .name,
                              title: UserDefaults.standard.value(forKey: "name") as? String ?? "No Name",
                              handler: nil),
-            ProfileViewModel(viewModelType: .email,
+            ProfileViewModel(viewModelType: .info,
                              title: UserDefaults.standard.value(forKey: "email") as? String ?? "No Email",
                              handler: nil)
         ]))
@@ -65,6 +65,9 @@ class ProfileViewController: UIViewController {
                                                         guard let strongSelf = self else {
                                                             return
                                                         }
+                                                        
+                                                        UserDefaults.standard.set(nil, forKey: "email")
+                                                        UserDefaults.standard.set(nil, forKey: "name")
                                                         
                                                         // Facebook log out
                                                         FBSDKLoginKit.LoginManager().logOut()
@@ -98,7 +101,9 @@ class ProfileViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableHeaderView = createTableHeader()
+        tableView.tableFooterView = createTableFooter()
         tableView.isScrollEnabled = false
+        tableView.backgroundColor = .systemGroupedBackground
     }
     
     func createTableHeader() -> UIView? {
@@ -114,7 +119,7 @@ class ProfileViewController: UIViewController {
                                         y: 0,
                                         width: self.view.width,
                                         height: 300))
-        headerView.backgroundColor = .systemGray4
+      headerView.backgroundColor = .systemGray4
         
         let imageView = UIImageView(frame: CGRect(x: (headerView.width - 200) / 2,
                                                   y: 50,
@@ -122,7 +127,7 @@ class ProfileViewController: UIViewController {
                                                   height: 200))
         
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .white
+        imageView.backgroundColor = .systemBackground
         imageView.layer.borderColor = UIColor.white.cgColor
         imageView.layer.borderWidth = 3
         imageView.layer.masksToBounds = true
@@ -139,6 +144,21 @@ class ProfileViewController: UIViewController {
         })
         
         return headerView
+    }
+    
+    func createTableFooter() -> UIView? {
+        let footerView = UIView(frame: CGRect(x: 0,
+                                              y: 0,
+                                              width: self.view.width,
+                                              height: 100))
+        let imageView = UIImageView(frame: CGRect(x: (footerView.width - 125) / 2,
+                                                  y: 15,
+                                                  width: 125,
+                                                  height: 125))
+        imageView.image = UIImage(named: "logo")
+        imageView.contentMode = .scaleAspectFill
+        footerView.addSubview(imageView)
+        return footerView
     }
 }
 
@@ -173,14 +193,14 @@ class ProfileTableViewCell: UITableViewCell {
     
     public func setUp(with viewModel: ProfileViewModel) {
         self.textLabel?.text = viewModel.title
-        self.backgroundColor = .secondarySystemBackground
+        self.backgroundColor = .secondarySystemGroupedBackground
         
         switch viewModel.viewModelType {
         case .name:
             self.textLabel?.textAlignment = .center
             self.textLabel?.font = .systemFont(ofSize: 24, weight: .medium)
             self.selectionStyle = .none
-        case .email:
+        case .info:
             self.textLabel?.textAlignment = .center
             self.textLabel?.font = .systemFont(ofSize: 22, weight: .regular)
             self.selectionStyle = .none

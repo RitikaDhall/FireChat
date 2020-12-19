@@ -52,6 +52,7 @@ class LoginViewController: UIViewController {
         field.layer.borderWidth = 1
         field.layer.borderColor = UIColor.systemGray5.cgColor
         field.placeholder = "Password"
+        field.textColor = .placeholderText
         field.isSecureTextEntry = true
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         field.leftViewMode = .always
@@ -83,9 +84,6 @@ class LoginViewController: UIViewController {
     private let fbLoginButton: FBLoginButton = {
         let button = FBLoginButton()
         button.permissions = ["email,public_profile"]
-        button.layer.cornerRadius = 12
-        button.layer.masksToBounds = true
-        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
         return button
     }()
     
@@ -171,15 +169,15 @@ class LoginViewController: UIViewController {
                                width: scrollView.width - 60,
                                height: 52)
         
-        fbLoginButton.frame = CGRect(x: 30,
+        fbLoginButton.frame = CGRect(x: 32,
                                      y: orLabel.bottom + 15,
-                                     width: scrollView.width - 60,
-                                     height: 52)
+                                     width: scrollView.width - 64,
+                                     height: 42)
         
         googleLoginButton.frame = CGRect(x: 30,
                                          y: fbLoginButton.bottom + 10,
                                          width: scrollView.width - 60,
-                                         height: 52)
+                                         height: 44)
     }
     
     @objc private func didTapLogin() {
