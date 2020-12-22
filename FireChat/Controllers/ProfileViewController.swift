@@ -11,22 +11,7 @@ import FBSDKLoginKit
 import GoogleSignIn
 import SDWebImage
 
-enum ProfileViewModelType {
-    case name, info, logout
-}
-
-struct ProfileViewModel {
-    let viewModelType: ProfileViewModelType
-    let title: String
-    let handler: (() -> Void)?
-}
-
-struct Section {
-    let title: String
-    let options: [ProfileViewModel]
-}
-
-class ProfileViewController: UIViewController {
+final class ProfileViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     
@@ -119,7 +104,7 @@ class ProfileViewController: UIViewController {
                                         y: 0,
                                         width: self.view.width,
                                         height: 300))
-      headerView.backgroundColor = .systemGray4
+        headerView.backgroundColor = .systemGray4
         
         let imageView = UIImageView(frame: CGRect(x: (headerView.width - 200) / 2,
                                                   y: 50,
@@ -192,22 +177,22 @@ class ProfileTableViewCell: UITableViewCell {
     static let identifier = "ProfileTableViewCell"
     
     public func setUp(with viewModel: ProfileViewModel) {
-        self.textLabel?.text = viewModel.title
-        self.backgroundColor = .secondarySystemGroupedBackground
+        textLabel?.text = viewModel.title
+        backgroundColor = .secondarySystemGroupedBackground
         
         switch viewModel.viewModelType {
         case .name:
-            self.textLabel?.textAlignment = .center
-            self.textLabel?.font = .systemFont(ofSize: 24, weight: .medium)
-            self.selectionStyle = .none
+            textLabel?.textAlignment = .center
+            textLabel?.font = .systemFont(ofSize: 24, weight: .medium)
+            selectionStyle = .none
         case .info:
-            self.textLabel?.textAlignment = .center
-            self.textLabel?.font = .systemFont(ofSize: 22, weight: .regular)
-            self.selectionStyle = .none
+            textLabel?.textAlignment = .center
+            textLabel?.font = .systemFont(ofSize: 22, weight: .regular)
+            selectionStyle = .none
         case .logout:
-            self.textLabel?.textColor = .systemRed
-            self.textLabel?.font = .systemFont(ofSize: 22, weight: .regular)
-            self.textLabel?.textAlignment = .center
+            textLabel?.textColor = .systemRed
+            textLabel?.font = .systemFont(ofSize: 22, weight: .regular)
+            textLabel?.textAlignment = .center
         }
     }
 }
