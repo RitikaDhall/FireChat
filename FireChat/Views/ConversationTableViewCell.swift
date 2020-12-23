@@ -28,7 +28,6 @@ class ConversationTableViewCell: UITableViewCell {
     
     private let userMessageLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 18, weight: .regular)
         label.numberOfLines = 0
         return label
     }()
@@ -64,8 +63,16 @@ class ConversationTableViewCell: UITableViewCell {
     }
     
     public func configure(with model: Conversation) {
+        
         userNameLabel.text = model.name
         userMessageLabel.text = model.latestMessage.text
+        
+        if !model.latestMessage.isRead {
+            userMessageLabel.font = .systemFont(ofSize: 18, weight: .bold)
+        }
+        else {
+            userMessageLabel.font = .systemFont(ofSize: 18, weight: .regular)
+        }
         
         let path = "images/\(model.otherUserEmail)_profile_picture.png"
         StorageManager.shared.downloadURL(for: path, completion: { [weak self] result in

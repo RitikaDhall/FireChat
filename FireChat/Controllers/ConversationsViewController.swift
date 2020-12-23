@@ -200,6 +200,15 @@ extension ConversationsViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let model = conversations[indexPath.row]
+        
+        if model.latestMessage.isRead != true {
+            DatabaseManager.shared.updateLatestMessage(conversationId: model.id, completion: { success in
+                if !success {
+                    print("Failed to update is_read for conversation.")
+                }
+            })
+        }
+        
         openConversation(model)
     }
     

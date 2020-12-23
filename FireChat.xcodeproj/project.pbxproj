@@ -141,12 +141,12 @@
 		4D6B466F254BF417000D890C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4D6B465E254BF29D000D890C /* ConversationsViewController.swift */,
 				4D44E7A8254C706400799908 /* Login */,
-				4D6B467E254BF5E6000D890C /* PhotoViewerViewController.swift */,
-				4D6B4684254BF620000D890C /* NewConversationViewController.swift */,
 				4D6B4687254BF62E000D890C /* ProfileViewController.swift */,
+				4D6B465E254BF29D000D890C /* ConversationsViewController.swift */,
+				4D6B4684254BF620000D890C /* NewConversationViewController.swift */,
 				4DFC70772552CCDF000C5AC1 /* ChatViewController.swift */,
+				4D6B467E254BF5E6000D890C /* PhotoViewerViewController.swift */,
 				4D13D44F2589E3E800146726 /* LocationPickerViewController.swift */,
 			);
 			path = Controllers;

@@ -137,43 +137,9 @@ extension DatabaseManager {
     }
 }
 
-// MARK: chat app user struct
-
-
 // MARK: - Sending messages / conversations
 
 extension DatabaseManager {
-    
-    /*
-     
-     "dfsfdsfds" [
-        "messages": [
-            [
-                "name": "",
-                "id": String,
-                "type": text / photo / video,
-                "content": String,
-                "date": Date(),
-                "sender_email": String,
-                "is_read": true/false
-            ]
-        ], ...
-     ]
-     
-     conversations => [
-        [
-            "id": "dfsfdsfds",
-            "other_user_email": "",
-            "name": "",
-            "latest_message": => [
-                "date": Date(),
-                "message": "",
-                "is_read": true/false
-            ]
-        ], ...
-     ]
-     
-     */
     
     /// Creates a new conversation with target user email and first message sent
     public func createNewConversation(with otherUserEmail: String, name: String, firstMessage: Message, completion: @escaping (Bool) -> Void) {
@@ -224,7 +190,7 @@ extension DatabaseManager {
                 "latest_message": [
                     "date": dateString,
                     "message": message,
-                    "is_read": false
+                    "is_read": true
                 ]
             ]
             
@@ -398,7 +364,7 @@ extension DatabaseManager {
             
             let messages: [Message] = value.compactMap({ dictionary in
                 guard let name = dictionary["name"] as? String,
-                      let isRead = dictionary["is_read"] as? Bool,
+                      let _ = dictionary["is_read"] as? Bool,
                       let messageID = dictionary["id"] as? String,
                       let content = dictionary["content"] as? String,
                       let senderEmail = dictionary["sender_email"] as? String,
@@ -552,8 +518,8 @@ extension DatabaseManager {
                     var databaseEntryConversations = [[String: Any]]()
                     let updatedValue: [String: Any] = [
                         "date": dateString,
-                        "is_read": false,
-                        "message": message
+                        "message": message,
+                        "is_read": true
                     ]
                     
                     if var currentUserConversations = snapshot.value as? [[String: Any]] {
@@ -609,8 +575,8 @@ extension DatabaseManager {
                         strongSelf.database.child("\(otherUserEmail)/conversations").observeSingleEvent(of: .value, with: { snapshot in
                             let updatedValue: [String: Any] = [
                                 "date": dateString,
-                                "is_read": false,
-                                "message": message
+                                "message": message,
+                                "is_read": false
                             ]
                             var databaseEntryConversations = [[String: Any]]()
                             
@@ -743,5 +709,41 @@ extension DatabaseManager {
             completion(.failure(DatabaseError.failedToFetch))
             return
         })
+    }
+    
+    /// Updates is_read to true for the conversation
+    public func updateLatestMessage(conversationId: String, completion: @escaping (Bool) -> Void) {
+        guard let email = UserDefaults.standard.value(forKey: "email") as? String else {
+            return
+        }
+        let safeEmail = DatabaseManager.safeEmail(emailAddress: email)
+        
+        print("Update latest message is read with: \(conversationId)")
+        
+        let ref = database.child("\(safeEmail)/conversations")
+        
+        ref.observeSingleEvent(of: .value) { snapshot in
+            if let conversations = snapshot.value as? [[String: Any]] {
+                var positionToUpdate = 0
+                for conversation in conversations {
+                    if let id = conversation["id"] as? String,
+                       id == conversationId {
+                        print("Found conversation to update.")
+                        break
+                    }
+                    positionToUpdate += 1
+                }
+                
+                ref.child("\(positionToUpdate)/latest_message").updateChildValues(["is_read": true], withCompletionBlock: { error, _ in
+                    guard error == nil else {
+                        completion(false)
+                        print("Failed to update is_read.")
+                        return
+                    }
+                    print("Updated is_read.")
+                    completion(true)
+                })
+            }
+        }
     }
 }
