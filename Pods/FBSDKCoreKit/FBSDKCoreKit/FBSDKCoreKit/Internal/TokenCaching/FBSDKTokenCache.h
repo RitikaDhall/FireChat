@@ -18,13 +18,15 @@
 
 #import <Foundation/Foundation.h>
 
-@class FBSDKAccessToken;
+#if SWIFT_PACKAGE
+#import "FBSDKAccessToken.h"
+#else
+#import <FBSDKCoreKit/FBSDKAccessToken.h>
+#endif
 
-NS_SWIFT_NAME(AccessTokenCaching)
-@protocol FBSDKAccessTokenCaching<NSObject>
+#import "FBSDKTokenCaching.h"
 
-@property (nonatomic, copy) FBSDKAccessToken *accessToken;
-
-- (void)clearCache;
+NS_SWIFT_NAME(TokenCache)
+@interface FBSDKTokenCache : NSObject<FBSDKTokenCaching>
 
 @end

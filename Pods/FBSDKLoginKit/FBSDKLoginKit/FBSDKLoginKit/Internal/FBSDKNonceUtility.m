@@ -16,17 +16,23 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "TargetConditionals.h"
+#import "FBSDKNonceUtility.h"
 
-#if !TARGET_OS_TV
+#ifdef FBSDKCOCOAPODS
+ #import <FBSDKCoreKit/FBSDKCoreKit+Internal.h>
+#else
+ #import "FBSDKCoreKit+Internal.h"
+#endif
 
-#import <UIKit/UIKit.h>
+@implementation FBSDKNonceUtility
 
-#import "FBSDKIcon.h"
++ (BOOL)isValidNonce:(NSString *)nonce
+{
+  NSString *string = [FBSDKTypeUtility stringValue:nonce];
+  NSRange whiteSpaceRange = [string rangeOfCharacterFromSet:[NSCharacterSet whitespaceCharacterSet]];
+  BOOL containsWhitespace = (whiteSpaceRange.location != NSNotFound);
 
-NS_SWIFT_NAME(FBMaleSilhouetteIcon)
-@interface FBSDKMaleSilhouetteIcon : FBSDKIcon
+  return (([string length] > 0) && !containsWhitespace);
+}
 
 @end
-
-#endif
