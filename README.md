@@ -19,14 +19,25 @@ iOS real-time chat application using Firebase.
 ## Screenshots of the application
 
 - Login page
-![Login page](images/login.png "Login Page")
+  
+<img src="images/login.png" alt="Login Page" width="200">
+
 - New user registration page
-![Registration page](images/register.png "Registration Page")
+
+<img src="images/register.png" alt="Registration Page" width="200">
+
 - Home page
-![Home page](images/home.png "Home Page")
+
+<img src="images/home.png" alt="Home Page" width="200">
+
 - Chat view
-![Chat view](images/chat.png "Chat View")
+
+<img src="images/chat.png" alt="Chat View" width="200">
+
 - Profile page
-![Profile page](images/profile.png "Profile Page")
+
+<img src="images/profile.png" alt="Profile Page" width="200">
+
 - Search contacts page
-![Searh page](images/search.png "Search Page")
+
+<img src="images/search.png" alt="Search Page" width="200">
